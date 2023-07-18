@@ -1,0 +1,1 @@
+exports.COOKIE_SESION_NAME = 'authToken';
