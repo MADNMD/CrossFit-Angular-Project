@@ -26,4 +26,14 @@ exports.editWorkout = (workoutId, workoutData) => Workout.updateOne({ _id: worko
 
 exports.delete = (workoutId) => Workout.findByIdAndDelete(workoutId);
 
-exports.myWorkout = (userId) => Workout.find({ owner: userId });
+exports.myWorkouts = async (userId) => {
+
+    try {
+        const query = Workout.find({ owner: userId });
+        const result = await query;
+
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
