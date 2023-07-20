@@ -73,5 +73,19 @@ router.delete('/delete/:workoutId', async (req, res) => {
     }
 });
 
+router.get('/myWorkouts/:userId', async (req, res) => {
+
+    try {
+        const userId = req.params.userId;
+        const myWorkouts = await workoutServices.myWorkouts(userId);
+
+        res.json(myWorkouts);
+    } catch (error) {
+        res.status(400).json({
+            message: getErrorMessage(error)
+        })
+    }
+});
+
 
 module.exports = router;
