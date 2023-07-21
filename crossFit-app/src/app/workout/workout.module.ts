@@ -4,6 +4,7 @@ import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
 import { CreateWorkoutComponent } from './create-workout/create-workout.component';
 import { DetailsWorkoutComponent } from './details-workout/details-workout.component';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
+import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
 
 
 
@@ -12,7 +13,8 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
     AllWorkoutsComponent,
     CreateWorkoutComponent,
     DetailsWorkoutComponent,
-    EditWorkoutComponent
+    EditWorkoutComponent,
+    MyWorkoutsComponent
   ],
   imports: [
     CommonModule
