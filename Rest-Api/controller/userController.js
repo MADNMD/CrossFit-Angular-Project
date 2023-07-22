@@ -40,6 +40,7 @@ router.post('/login', async (req, res) => {
         // res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
         res.json({
             authToken: token,
+            username: user.username,
             email: user.email,
             _id: user._id,
         });
