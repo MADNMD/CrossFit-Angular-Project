@@ -1,0 +1,276 @@
+/* #edit {
+    width: 100%;
+    height: 78vh;
+    margin-left: -8px;
+    padding-left: 16px;
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 149px;
+  }
+  
+  #edit-container {
+    color: darkred;
+    width: 360px;
+    height: auto;
+    margin: auto;
+    margin-top: -18px;
+    background-color: #000203;
+    border: 2px solid darkred;
+    border-radius: 20px;
+  }
+  
+  #edit-container h1 {
+    text-align: center;
+    padding-top: 15px;
+    color: darkred;
+  }
+  
+  #edit-container h4 {
+    margin-top: 10px;
+    text-align: center;
+    color: darkred;
+  }
+  
+  #edit-container form {
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: -8px;
+  }
+  
+  #edit-container form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  #edit-container form input {
+    width: 320px;
+    height: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+  }
+  
+  #edit-container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  #edit-container form textarea {
+    width: 320px;
+    height: 80px;
+    padding-left: 7px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+    resize: none;
+    color: black;
+  }
+  
+  #edit-container select {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 327px;
+    color: #050912;
+    background-color: whitesmoke;
+  }
+  
+  #edit-container select option {
+    color: #050912;
+    font-weight: bold;
+  }
+
+  #create-container select#trainingDuration {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 327px;
+    color: #050912;
+    background-color: whitesmoke;
+  }
+  
+  #create-container select#trainingDuration option {
+    color: #050912;
+    font-weight: bold;
+  }
+  
+  #edit-container input[type="submit"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: darkred !important;
+    color: black;
+    font-size: 17px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  #edit-container input[type="submit"]:hover{
+    background-color: darkred;
+    color: white;
+  } */
+
+
+
+  #edit {
+    width: 100%;
+    height: 78vh;
+    margin-left: -8px;
+    padding-left: 16px;
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 149px;
+}
+
+#edit-container {
+    color: darkred;
+    width: 360px;
+    /* height: auto; */
+    height: 565px;
+    margin: auto;
+    margin-top: -18px;
+    background-color: #000203;
+    border: 2px solid darkred;
+    border-radius: 20px;
+}
+
+#edit-container h1 {
+    text-align: center;
+    padding-top: 15px;
+    color: darkred;
+}
+
+#edit-container h4 {
+    margin-top: 10px;
+    text-align: center;
+    color: darkred;
+}
+
+#edit-container form {
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: -8px;
+}
+
+#edit-container form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#edit-container form input {
+    width: 320px;
+    height: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+#edit-container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#edit-container form textarea {
+    width: 320px;
+    height: 80px;
+    padding-left: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+    resize: none;
+    color: black;
+}
+
+#edit-container select {
+    outline: 0;
+    border: 0;
+    font-size: 16px;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 327px;
+    color: #050912;
+    background-color: whitesmoke;
+}
+
+#edit-container select option {
+    color: #050912;
+    font-weight: bold;
+}
+
+#edit-container .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 16px;
+}
+
+#edit-container #edit-btn,
+#edit-container #back-btn {
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#edit-container #edit-btn {
+    background-color: darkred;
+    color: black;
+    margin-left: 20px;
+}
+
+#edit-container #edit-btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#edit-container #back-btn {
+    background-color: darkred;
+    color: black;
+}
+
+#edit-container #back-btn:hover {
+    background-color: darkred;
+    color: white;
+}
