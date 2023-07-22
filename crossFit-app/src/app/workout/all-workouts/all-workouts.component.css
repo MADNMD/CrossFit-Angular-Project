@@ -1,0 +1,98 @@
+#dashboard {
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: 42px;
+    margin-left: -8px;
+    margin-right: -8px;
+    display: block;
+}
+
+#catalog{
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 40px;
+    color: darkred;
+}
+
+.card img {
+    margin: auto;
+    height: 290px;
+    width: 95%;
+}
+
+.card-wrapper {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 277px;
+}
+
+.card-wrapper h2 {
+    margin: auto;
+}
+
+.title,
+.salary {
+    font-size: 21px;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 23%;
+    height: 500px;
+    transform: translateY(-122px);
+    margin: 25px auto;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 5px;
+    border: 2px solid rgba(169, 152, 198, 0.781);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.682), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.details-btn {
+    text-decoration: none;
+    margin: auto 50px;
+    font-size: 17px;
+    width: 130px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    background-color: darkred;
+    color: black;
+    border-radius: 7px;
+}
+
+.details-btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.card p {
+    min-width: 90% !important;
+    margin: auto;
+    font-size: 21px;
+    max-height: 50px;
+    max-width: 30%;
+    text-align: center;
+}
+
+.card span {
+    padding: 10px;
+    margin: auto;
+}
+
+#no-post {
+    margin-top: -12%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* This ensures the container covers the full viewport height */
+}
