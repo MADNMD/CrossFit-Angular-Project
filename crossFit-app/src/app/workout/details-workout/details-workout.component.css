@@ -1,0 +1,184 @@
+.details{
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: -8px;
+    padding-left: 16px;
+    padding-bottom: 144px;
+    width: 100%;
+    height: 81vh;
+
+
+    position: relative; 
+}
+
+#details-wrapper {
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: auto;
+    transform: translateY(231px);
+    min-height: 400px;
+    max-width: 80%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.333);
+    border: 2px solid rgba(169, 152, 198, 0.781);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.682), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#img-wrapper {
+    max-width: 35%;
+}
+
+#img-wrapper img {
+    width: 100%;
+    min-height: 300px;
+    width: 300px;
+    height: 300px;
+}
+
+#details-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 29px;
+    width: 100%;
+}
+
+#info-wrapper {
+    display: block;
+    width: 65%;
+    margin-left: 10px;
+}
+
+#info-wrapper table {
+    width: 100%;
+    border-spacing: 10px;
+    /* Adjust the value as needed to add more space between cells */
+}
+
+#info-wrapper td {
+    padding: 10px;
+    /* Add padding to increase space between cell content and borders */
+}
+
+#info-wrapper>p {
+    width: 90%;
+    font-weight: bold;
+}
+
+#info-wrapper>p>span {
+    font-weight: lighter;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 19px;
+}
+
+span {
+    font-size: 17px;
+}
+
+table {
+    width: 90%;
+}
+
+table td p {
+    font-weight: bold;
+}
+
+table td p span {
+    font-weight: lighter;
+}
+
+#action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#action-buttons a {
+    text-decoration: none;
+    margin: auto 50px;
+    font-size: 17px;
+    width: 130px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    background-image: none;
+    background-color: darkred;
+    cursor: pointer;
+}
+
+#action-buttons a:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#action-buttons p {
+    text-decoration: none;
+    margin: auto 50px;
+    font-size: 17px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    background-image: none;
+    background-color: darkred;
+}
+
+#delete-btn{
+    cursor: pointer;
+}
+
+#back-btn {
+    /* Add styles for the "Back" button */
+    position: absolute;
+    top: 30px;
+    left: -13px;
+    margin: 10px;
+}
+
+/* -------------- */
+
+/* #likes-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+#like-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: darkred;
+    font-size: 24px;
+}
+
+#like-btn i {
+    margin-right: 5px;
+}
+
+#like-btn span {
+    margin-left: 5px;
+    font-weight: bold;
+} */
