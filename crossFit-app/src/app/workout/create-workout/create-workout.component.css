@@ -1,0 +1,167 @@
+#create {
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: -8px;
+    padding-left: 16px;
+    width: 100%;
+    height: 78vh;
+    padding-top: 169px;
+}
+
+#create-container {
+    color: darkred;
+    width: 360px;
+    height: auto;
+    margin: auto;
+    margin-top: -18px;
+    background-color: #000203;
+    border: 2px solid darkred;
+    border-radius: 20px;
+}
+
+#create-container h1 {
+    text-align: center;
+    padding-top: 15px;
+    color: darkred;
+}
+
+#create-container h4 {
+    margin-top: 10px;
+    text-align: center;
+    color: darkred;
+}
+
+#create-container form {
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: -8px;
+}
+
+#create-container form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#create-container form input {
+    width: 320px;
+    height: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+#create-container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* #create-container input[type="number"] {
+    -moz-appearance: textfield;
+  } */
+
+#create-container form textarea {
+    width: 320px;
+    height: 80px;
+    padding-left: 7px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+    resize: none;
+    color: black;
+}
+
+#create-container select {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 320px;
+    color: #050912;
+    background-color: whitesmoke;
+}
+
+#create-container select option {
+    color: #050912;
+    font-weight: bold;
+}
+
+
+
+
+#create-container select#trainingDuration {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 327px;
+    color: #050912;
+    background-color: whitesmoke;
+  }
+  
+  #create-container select#trainingDuration option {
+    color: #050912;
+    font-weight: bold;
+  }
+
+
+
+
+#create-container input[type="submit"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: darkred !important;
+    color: black;
+    font-size: 17px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+#create-container input[type="submit"]:hover {
+    background-color: darkred;
+    color: white;
+}
+
+/* -------------------------------------- */
+input.ng-valid {
+    border-left: 5px solid #42A948;
+    /* green */
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-left: 5px solid #A94442;
+    /* red */
+  }
+  
+  p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: darkred;
+    padding-top: 0;
+  }
+  
+  .input-error {
+    border-left-color: darkred;
+  }
+  /* --------------------------------------- */
