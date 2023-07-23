@@ -1,1 +1,46 @@
-<p>login works!</p>
+<main id="login">
+
+    <!-- <div>
+        <div class="errorContainer">
+            <p>App don`t work</p>
+        </div>
+    </div> -->
+
+    <div class="login-box">
+        <h1>Login</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser">
+
+            <label>Email</label>
+            <input formControlName="email" type="text" name="email" placeholder="Email..">
+
+            <ng-container *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+                <p class="error" *ngIf="loginForm.controls['email'].errors?.['required']">
+                    Email is required!
+                </p>
+                <p class="error" *ngIf="loginForm.controls['email'].errors?.['pattern']">
+                    Email is not valid!
+                </p>
+            </ng-container>
+
+            <label>Password</label>
+            <input formControlName="password" type="password" name="password" placeholder="Password..">
+
+            <ng-container *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+                <p class="error" *ngIf="loginForm.controls['password'].errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                    Password should have at least 3 symbols!
+                </p>
+            </ng-container>
+
+
+
+            <input (click)="loginUser()" [disabled]="!loginForm.valid"
+                [style]="{backgroundColor: loginForm.invalid ? 'grey' : 'darkred'}" type="submit" value="Login">
+
+        </form>
+        <p>Don't have an account? <a routerLink="/auth/register">Register here</a></p>
+    </div>
+
+</main>
