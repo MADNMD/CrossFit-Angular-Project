@@ -1,1 +1,66 @@
-<p>register works!</p>
+<main id="register">
+
+    <!-- <div>
+        <div class="errorContainer">
+            <p>App don`t work</p>
+        </div>
+    </div> -->
+
+    <div class="register-box">
+        <h1>Register</h1>
+
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser">
+            <label>Username</label>
+            <input formControlName="username" type="text" name="username" placeholder="Username..">
+
+            <ng-container
+                *ngIf="registerForm.controls['username'].touched && registerForm.controls['username'].invalid">
+                <p class="error" *ngIf="registerForm.controls['username'].errors?.['required']">
+                    Username is required!
+                </p>
+                <p class="error" *ngIf="registerForm.controls['username'].errors?.['minlength']">
+                    Username should have at least 3 symbols!
+                </p>
+                <p class="error" *ngIf="registerForm.controls['username'].errors?.['maxlength']">
+                    Username must not be more than 25 symbols!
+                </p>
+            </ng-container>
+
+            <label>Email</label>
+            <input formControlName="email" type="text" name="email" placeholder="Email..">
+
+            <ng-container *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid">
+                <p class="error" *ngIf="registerForm.controls['email'].errors?.['required']">
+                    Email is required!
+                </p>
+                <p class="error" *ngIf="registerForm.controls['email'].errors?.['pattern']">
+                    Email is not valid!
+                </p>
+            </ng-container>
+
+            <label>Password</label>
+            <input formControlName="password" type="password" name="password" placeholder="Password..">
+
+            <ng-container
+                *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+                <p class="error" *ngIf="registerForm.controls['password'].errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="registerForm.controls['password'].errors?.['minlength']">
+                    Password should have at least 3 symbols!
+                </p>
+            </ng-container>
+
+            <label>Confirm Password</label>
+            <input formControlName="repeatPassword" type="password" name="repeatPassword"
+                placeholder="Confirm Password..">
+                <ng-container *ngIf="registerForm.controls['repeatPassword'].touched && !comparePasswords()">
+                    <p class="error">Password missmatch!</p>
+                </ng-container>
+
+            <input (click)="registerUser()" [disabled]="!registerForm.valid || !comparePasswords()" [style]="{backgroundColor: registerForm.invalid ? 'grey' : 'darkred'}" type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a routerLink="/auth/login">Login here</a></p>
+    </div>
+
+</main>
