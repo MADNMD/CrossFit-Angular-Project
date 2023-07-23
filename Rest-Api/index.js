@@ -11,7 +11,7 @@ const { auth } = require('./middlewares/authMiddleware');
 const app = express();
 
 expresConfig(app);
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
 app.use(auth);
 app.use(coockiParser());
 app.use(router);
