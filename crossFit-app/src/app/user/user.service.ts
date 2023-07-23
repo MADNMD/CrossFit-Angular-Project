@@ -11,30 +11,25 @@ const apiURL = environment.appUrl;
 })
 export class UserService implements OnDestroy {
 
-  private isAuthenticated = new Subject<boolean>(); // излъчва промени в статуса на удостоверяване,
-  authStatusChanged = this.isAuthenticated.asObservable(); //това e observable представяне на този subject, което позволява на абонатите да наблюдават промените в статуса на удостоверяване без директен достъп до subject-a.
-
-  private userSubject = new BehaviorSubject<User | null>(null);
-  user$: Observable<User | null> = this.userSubject.asObservable();
+  private user$$ = new BehaviorSubject<User | null>(null);
+  user$ = this.user$$.asObservable();
 
   user: User | null = null;
+
+  get isLogged() {
+    return !!this.user;
+  }
 
   subscription: Subscription;
 
   constructor(private http: HttpClient) {
-    // this.subscription = new Subscription;
     this.subscription = this.user$.pipe().subscribe(user => this.user = user);
   }
-
-  // ngOnInit(): void {
-  //   // this.subscription = this.user$.subscribe(user => this.user = user); 
-  // }
 
   registerUser(username: string, email: string, password: string) {
     return this.http.post<User>(`${apiURL}/users/register`, { username, email, password }).pipe(
       tap((user: User) => { //С включването на tap в pipe-а, той гарантира, че редът isAuthenticated.next(true) се изпълнява само след успешна регистрация.
-        this.setUser(user);
-        this.isAuthenticated.next(true);
+        this.user$$.next(user);
       }),
       catchError((error: HttpErrorResponse) => {
         console.error(error);
@@ -46,8 +41,7 @@ export class UserService implements OnDestroy {
   loginUser(email: string, password: string) {
     return this.http.post<User>(`${apiURL}/users/login`, { email, password }).pipe(
       tap((user: User) => {
-        this.setUser(user);
-        this.isAuthenticated.next(true);
+        this.user$$.next(user);
       }),
       catchError((error: HttpErrorResponse) => {
         console.log(error);
@@ -59,8 +53,7 @@ export class UserService implements OnDestroy {
   logoutUser() {
     return this.http.get<User>(`${apiURL}/users/logout`).pipe(
       tap(() => {
-        this.setUser(null);
-        this.isAuthenticated.next(false);
+        this.user$$.next(null);
       }),
       catchError((error: HttpErrorResponse) => {
         console.log(error);
@@ -69,13 +62,15 @@ export class UserService implements OnDestroy {
     )
   }
 
-  private setUser(user: User | null): void {
-    // console.log(user);
-    this.userSubject.next(user);//актуализира стойността userSubject с предоставения потребител или нула.
+  getUser() {
+    return this.http.get<User>(`${apiURL}/users/user`).pipe(
+      tap((user) => {
+        this.user$$.next(user);
+      })
+    )
   }
 
   ngOnDestroy(): void {
-    // this.subscription.unsubscribe();
-    this.userSubject.complete();
+    this.subscription.unsubscribe();
   }
 }
