@@ -47,3 +47,5 @@ exports.createToken = (user) => {
     });
     return tokenPromise;
 }
+
+exports.getUser = (userId) => User.findOne({ _id: userId }, { password: 0, __v: 0 });// да ми върне user-a без паролата;
