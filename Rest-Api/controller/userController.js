@@ -52,6 +52,24 @@ router.post('/login', async (req, res) => {
 
 });
 
+router.get('/user', async (req, res) => {
+
+    try {
+        const userId = req.user._id;
+
+        const user = await userServices.getUser(userId);
+
+        res.json({
+            _id: user._id,
+            email: user.email,
+            username: user.username
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 router.get('/logout', (req, res) => {
 
     // res.clearCookie(COOKIE_SESION_NAME);
