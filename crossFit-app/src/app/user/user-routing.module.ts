@@ -13,20 +13,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-  },
-  // 
-  // {
-  //   path: 'workouts/create',
-  //   component: CreateWorkoutComponent
-  // },
-  // {
-  //   path: 'not-found',
-  //   component: PageNotFoundComponent,
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: '/not-found'
-  // }
+  }
 ];
 
 @NgModule({
