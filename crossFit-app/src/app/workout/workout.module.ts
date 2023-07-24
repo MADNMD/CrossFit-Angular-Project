@@ -1,23 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
 import { CreateWorkoutComponent } from './create-workout/create-workout.component';
+import { WorkoutRoutingModule } from './workout-routing.module';
+import { RouterModule } from '@angular/router';
+import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsWorkoutComponent } from './details-workout/details-workout.component';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
 
-
-
 @NgModule({
   declarations: [
-    AllWorkoutsComponent,
     CreateWorkoutComponent,
+    AllWorkoutsComponent,
     DetailsWorkoutComponent,
     EditWorkoutComponent,
-    MyWorkoutsComponent
-  ],
+    MyWorkoutsComponent,  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    WorkoutRoutingModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    CreateWorkoutComponent,
+    AllWorkoutsComponent,
+    DetailsWorkoutComponent,
+    EditWorkoutComponent,
+    MyWorkoutsComponent,
   ]
 })
 export class WorkoutModule { }
