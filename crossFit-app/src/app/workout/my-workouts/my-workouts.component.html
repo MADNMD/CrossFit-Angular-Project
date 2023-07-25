@@ -1,1 +1,25 @@
-<p>my-workouts works!</p>
+<main class="dashboard">
+    <section id="catalog">
+        <ul class="card-wrapper" *ngIf="myWorkouts">
+            <li class="card" *ngFor="let workout of myWorkouts">
+                <img src={{workout.image}} />
+                <p>
+                    <strong>Difficulty level: </strong><span class="level">{{workout.difficultyLevel}}</span>
+                </p>
+                <p>
+                    <strong>Type of training: </strong><span class="training">{{workout.typeTraining}}</span>
+                </p>
+                <p><strong>Training duration:</strong><span class="trainingDuration">{{workout.trainingDuration}}</span>
+                </p>
+                <p>
+                    <strong>Likes: </strong><span class="likes">{{workout.likes.length}}</span>
+                </p>
+                <a class="details-btn" routerLink="/workouts/details/{{workout._id}}">Details</a>
+            </li>
+        </ul>
+
+        <div id="no-post" *ngIf="myWorkouts.length === 0">
+            <h2>No workouts added!</h2>
+        </div>
+    </section>
+</main>
