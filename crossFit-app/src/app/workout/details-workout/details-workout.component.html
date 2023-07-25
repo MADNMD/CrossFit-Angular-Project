@@ -1,1 +1,60 @@
-<p>details-workout works!</p>
+<main class="details">
+    <section id="details">
+        <div id="details-wrapper">
+            <p id="details-title">Type of training: {{currentWorkout?.typeTraining}}</p>
+            <div id="img-wrapper">
+                <img src="{{currentWorkout?.image}}" />
+            </div>
+            <div id="info-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                Difficulty level: <span
+                                    id="details-difficultyLevel">{{currentWorkout?.difficultyLevel}}</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>Training duration: <span
+                                    id="details-trainingDuration">{{currentWorkout?.trainingDuration}}</span></p>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>
+                            <p>Need of: <span id="details-need">Medicine</span></p>
+                        </td>
+                        <td>
+                            <p>Location: <span id="details-location">San Diego Zoo</span></p>
+                        </td>
+                    </tr> -->
+                </table>
+                <p>Exercises: <span id="details-exercises">{{currentWorkout?.exercises}}</span></p>
+            </div>
+
+            <div id="action-buttons">
+                <a routerLink="/workouts/allWorouts" id="back-btn">Back</a>
+                <ng-container *ngIf="user">
+                    <!-- {{user | json}} -->
+                    <ng-container *ngIf="isOwner">
+                        <a routerLink="/workouts/edit/{{currentWorkout?._id}}" id="edit-btn">Edit</a>
+                        <a (click)="deleteWorkout()" id="delete-btn">Delete</a>
+                    </ng-container>
+                    <ng-container *ngIf="!isOwner">
+                        <ng-container *ngIf="isLiked">
+                            <p id="already-like">You have already liked!</p>
+                        </ng-container>
+                        <ng-container *ngIf="!isLiked">
+                            <a (click)="onLike()" id="like-btn">Like</a>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <!-- <div id="likes-container">
+                <button id="like-btn" >
+                    <i class="fas fa-heart"></i>
+                    <span>0</span>
+                </button>
+            </div> -->
+        </div>
+    </section>
+</main>
