@@ -1,1 +1,182 @@
-<p>edit-workout works!</p>
+<!-- <main id="edit"> -->
+    <!-- <div>
+        <div class="errorContainer">
+            <p>App don`t work</p>
+        </div>
+    </div> -->
+<!-- 
+    <section id="edit-container">
+        <div class="edit-container-info">
+            <h1>Edit workout</h1>
+            <form [formGroup]="editForm" (ngSubmit)="editWorkout()">
+
+                <label>Difficulty level:</label>
+                <select formControlName="difficultyLevel" id="difficultyLevel" name="difficultyLevel">
+                    <option value="{{currentWorkout?.difficultyLevel}}">{{currentWorkout?.difficultyLevel}}</option>
+                    <option value="">-------</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Average">Average</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <ng-container
+                    *ngIf="editForm.controls['difficultyLevel'].touched && editForm.controls['difficultyLevel'].invalid">
+                    <p class="error" *ngIf="editForm.controls['difficultyLevel'].errors?.['required']">
+                        Difficulty level is required!
+                    </p>
+                </ng-container>
+
+                <label>Type of training:</label>
+                <input formControlName="typeTraining" type="text" id="typeTraining" name="typeTraining"
+                    value="{{currentWorkout?.typeTraining}}">
+                <ng-container
+                    *ngIf="editForm.controls['typeTraining'].touched && editForm.controls['typeTraining'].invalid">
+                    <p class="error" *ngIf="editForm.controls['typeTraining'].errors?.['required']">
+                        Type of training is required!
+                    </p>
+                </ng-container>
+
+                <label>Image:</label>
+                <input formControlName="image" type="text" id="image" name="image" value="{{currentWorkout?.image}}"
+                    placeholder="http://...">
+                <ng-container *ngIf="editForm.controls['image'].touched && editForm.controls['image'].invalid">
+                    <p class="error" *ngIf="editForm.controls['image'].errors?.['required']">
+                        Image is required!
+                    </p>
+                    <p class="error" *ngIf="editForm.controls['image'].errors?.['pattern']">
+                        The photo image is required and should start with http:// or https://!
+                    </p>
+                </ng-container>
+
+                <label>Training Duration</label>
+                <select formControlName="trainingDuration" id="trainingDuration" name="trainingDuration">
+                    <option value="{{currentWorkout?.trainingDuration}}">{{currentWorkout?.trainingDuration}}</option>
+                    <option value="5">5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                    <option value="20">20 min</option>
+                    <option value="25">25 min</option>
+                    <option value="30">30 min</option>
+                    <option value="35">35 min</option>
+                    <option value="40">40 min</option>
+                    <option value="45">45 min</option>
+                    <option value="50">50 min</option>
+                    <option value="55">55 min</option>
+                    <option value="60">60 min</option>
+                </select>
+                <ng-container
+                    *ngIf="editForm.controls['trainingDuration'].touched && editForm.controls['trainingDuration'].invalid">
+                    <p class="error" *ngIf="editForm.controls['trainingDuration'].errors?.['required']">
+                        Training Duration is required!
+                    </p>
+                </ng-container> -->
+
+                <!-- <label>Training duration:</label>
+                <input type="text" id="trainingDuration" name="trainingDuration" value=""> -->
+
+                <!-- <label>Exercises:</label>
+                <textarea formControlName="exercises" id="exercises"
+                    name="exercises">{{currentWorkout?.exercises}}</textarea>
+                <ng-container *ngIf="editForm.controls['exercises'].touched && editForm.controls['exercises'].invalid">
+                    <p class="error" *ngIf="editForm.controls['exercises'].errors?.['required']">
+                        Exercises is required!
+                    </p>
+                </ng-container>
+
+                <input (click)="editWorkout()" [disabled]="!editForm.valid" type="submit" id="btn" value="Edit">
+            </form>
+        </div>
+    </section>
+</main> -->
+
+<main id="edit">
+    <!-- <div>
+        <div class="errorContainer">
+            <p>App don't work</p>
+        </div>
+    </div> -->
+
+    <section id="edit-container">
+        <div class="edit-container-info">
+            <h1>Edit workout</h1>
+            <form [formGroup]="editForm" (ngSubmit)="editWorkout()">
+
+                <label>Difficulty level:</label>
+                <select formControlName="difficultyLevel" id="difficultyLevel" name="difficultyLevel">
+                    <option value="{{currentWorkout?.difficultyLevel}}">{{currentWorkout?.difficultyLevel}}</option>
+                    <option value="">-------</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Average">Average</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <ng-container
+                    *ngIf="editForm.controls['difficultyLevel'].touched && editForm.controls['difficultyLevel'].invalid">
+                    <p class="error" *ngIf="editForm.controls['difficultyLevel'].errors?.['required']">
+                        Difficulty level is required!
+                    </p>
+                </ng-container>
+
+                <label>Type of training:</label>
+                <input formControlName="typeTraining" type="text" id="typeTraining" name="typeTraining"
+                    value="{{currentWorkout?.typeTraining}}">
+                <ng-container
+                    *ngIf="editForm.controls['typeTraining'].touched && editForm.controls['typeTraining'].invalid">
+                    <p class="error" *ngIf="editForm.controls['typeTraining'].errors?.['required']">
+                        Type of training is required!
+                    </p>
+                </ng-container>
+
+                <label>Image:</label>
+                <input formControlName="image" type="text" id="image" name="image" value="{{currentWorkout?.image}}"
+                    placeholder="http://...">
+                <ng-container *ngIf="editForm.controls['image'].touched && editForm.controls['image'].invalid">
+                    <p class="error" *ngIf="editForm.controls['image'].errors?.['required']">
+                        Image is required!
+                    </p>
+                    <p class="error" *ngIf="editForm.controls['image'].errors?.['pattern']">
+                        The photo image is required and should start with http:// or https://!
+                    </p>
+                </ng-container>
+
+                <label>Training Duration</label>
+                <select formControlName="trainingDuration" id="trainingDuration" name="trainingDuration">
+                    <option value="{{currentWorkout?.trainingDuration}}">{{currentWorkout?.trainingDuration}}</option>
+                    <option value="5">5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                    <option value="20">20 min</option>
+                    <option value="25">25 min</option>
+                    <option value="30">30 min</option>
+                    <option value="35">35 min</option>
+                    <option value="40">40 min</option>
+                    <option value="45">45 min</option>
+                    <option value="50">50 min</option>
+                    <option value="55">55 min</option>
+                    <option value="60">60 min</option>
+                </select>
+                <ng-container
+                    *ngIf="editForm.controls['trainingDuration'].touched && editForm.controls['trainingDuration'].invalid">
+                    <p class="error" *ngIf="editForm.controls['trainingDuration'].errors?.['required']">
+                        Training Duration is required!
+                    </p>
+                </ng-container>
+
+                <!-- <label>Training duration:</label>
+                <input type="text" id="trainingDuration" name="trainingDuration" value=""> -->
+
+                <label>Exercises:</label>
+                <textarea formControlName="exercises" id="exercises"
+                    name="exercises">{{currentWorkout?.exercises}}</textarea>
+                <ng-container *ngIf="editForm.controls['exercises'].touched && editForm.controls['exercises'].invalid">
+                    <p class="error" *ngIf="editForm.controls['exercises'].errors?.['required']">
+                        Exercises is required!
+                    </p>
+                </ng-container>
+
+                <div class="button-container">
+                    <button type="button" id="back-btn" routerLink="/workouts/details/{{currentWorkout?._id}}">Back</button>
+                    <button type="submit" [disabled]="!editForm.valid" [style]="{backgroundColor: editForm.invalid ? 'grey' : 'darkred'}" id="edit-btn">Edit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
