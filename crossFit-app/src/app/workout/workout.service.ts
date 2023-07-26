@@ -41,4 +41,8 @@ export class WorkoutService {
     return this.http.post<Workout>(`${apiURL}/workouts/like/${workoutId}`, { userId });
   }
 
+  unLikeWorkout(workoutId: string, userId: string) {
+    return this.http.post<Workout>(`${apiURL}/workouts/unlike/${workoutId}`, { userId });
+  }
+
 }
