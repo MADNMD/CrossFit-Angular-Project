@@ -40,21 +40,25 @@
                         <a (click)="deleteWorkout()" id="delete-btn">Delete</a>
                     </ng-container>
                     <ng-container *ngIf="!isOwner">
-                        <ng-container *ngIf="isLiked">
-                            <p id="already-like">You have already liked!</p>
-                        </ng-container>
-                        <ng-container *ngIf="!isLiked">
-                            <a (click)="onLike()" id="like-btn">Like</a>
-                        </ng-container>
+                        <div id="like-container">
+                            <ng-container *ngIf="isLiked">
+                                <button mat-icon-button (click)="unLike()" id="like-btn" color="warn">
+                                    <mat-icon>favorite</mat-icon>
+                                     <p>Unlike:{{currentWorkout?.likes?.length}}</p>
+                                </button>
+                                <!-- <p id="already-like">You have already liked!</p> -->
+                            </ng-container>
+                            <ng-container *ngIf="!isLiked">
+                                <button mat-icon-button (click)="onLike()" id="like-btn" color="warn">
+                                    <mat-icon>favorite_border</mat-icon>
+                                     <p>Like:{{currentWorkout?.likes?.length}}</p>
+                                </button>
+                                <!-- <a (click)="onLike()" id="like-btn">Like</a> -->
+                            </ng-container>
+                        </div>
                     </ng-container>
                 </ng-container>
             </div>
-            <!-- <div id="likes-container">
-                <button id="like-btn" >
-                    <i class="fas fa-heart"></i>
-                    <span>0</span>
-                </button>
-            </div> -->
         </div>
     </section>
 </main>
