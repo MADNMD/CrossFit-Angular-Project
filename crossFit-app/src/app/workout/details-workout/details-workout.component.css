@@ -1,4 +1,4 @@
-.details{
+.details {
     background-image: url(../../../assets/background2.jpg);
     background-position: center;
     background-size: cover;
@@ -9,7 +9,7 @@
     height: 81vh;
 
 
-    position: relative; 
+    position: relative;
 }
 
 #details-wrapper {
@@ -58,12 +58,10 @@
 #info-wrapper table {
     width: 100%;
     border-spacing: 10px;
-    /* Adjust the value as needed to add more space between cells */
 }
 
 #info-wrapper td {
     padding: 10px;
-    /* Add padding to increase space between cell content and borders */
 }
 
 #info-wrapper>p {
@@ -131,9 +129,14 @@ table td p span {
     text-decoration: none;
     margin: auto 50px;
     font-size: 17px;
-    width: 200px;
+    /* width: 200px; */
+    width: 60px;
     padding: 10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    /* new style */
+    margin-top: -37px; 
+    margin-left: 29px;
+    /* new style */
     text-align: center;
     color: black;
     border-radius: 10px;
@@ -141,7 +144,7 @@ table td p span {
     background-color: darkred;
 }
 
-#delete-btn{
+#delete-btn {
     cursor: pointer;
 }
 
@@ -153,32 +156,28 @@ table td p span {
     margin: 10px;
 }
 
-/* -------------- */
-
-/* #likes-container {
-    text-align: center;
+#like-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align the like button to the bottom */
+    height: 100%;
+    /* Make the container take up the full height of its parent */
     margin-top: 20px;
 }
 
-
-
 #like-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
-    color: darkred;
     font-size: 24px;
+    margin-left: -1100px;
+    padding-top: 205px;
+    color: darkred;
 }
 
-#like-btn i {
-    margin-right: 5px;
+#like-btn.mat-icon-button[aria-label="Favorite"] {
+    color: grey;
+    /* Change the color of the filled heart icon here */
 }
-
-#like-btn span {
-    margin-left: 5px;
-    font-weight: bold;
-} */
