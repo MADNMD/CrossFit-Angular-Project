@@ -7,14 +7,16 @@ const { intiDB } = require('./config/databaseConfig');
 const { PORT } = require('./config/env');
 const router = require('./routes');
 const { auth } = require('./middlewares/authMiddleware');
+const { getErrorMessage } = require('../Rest-Api/utils/errorHellper')
 
 const app = express();
 
 expresConfig(app);
 app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
-app.use(auth);
 app.use(coockiParser());
+app.use(auth);
 app.use(router);
+app.use(getErrorMessage)
 
 
 intiDB();
