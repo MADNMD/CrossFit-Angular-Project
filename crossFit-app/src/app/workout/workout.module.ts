@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsWorkoutComponent } from './details-workout/details-workout.component';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
     RouterModule,
     WorkoutRoutingModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   exports: [
     CreateWorkoutComponent,
