@@ -12,7 +12,7 @@ router.post('/register', async (req, res) => {
         const user = await userServices.register(username, email, password);
         const token = await userServices.createToken(user);
 
-        // res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
         res.json({
             authToken: token,
             username: user.username,
@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
         const user = await userServices.login(email, password);
         const token = await userServices.createToken(user);
 
-        // res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
         res.json({
             authToken: token,
             username: user.username,
@@ -72,7 +72,7 @@ router.get('/user', async (req, res) => {
 
 router.get('/logout', (req, res) => {
 
-    // res.clearCookie(COOKIE_SESION_NAME);
+    res.clearCookie(COOKIE_SESION_NAME);
     res.json({});
     res.status(200);
 });
