@@ -23,7 +23,11 @@ export class DetailsWorkoutComponent implements OnInit {
     return this.userService.user?._id === this.currentWorkout?.owner._id;
   }
 
-  constructor(private workoutService: WorkoutService, private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private workoutService: WorkoutService,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   wokroutId = this.activatedRoute.snapshot.params?.['workoutId'] // така взимам ID-то на конкретна тренировка;
 
@@ -33,9 +37,9 @@ export class DetailsWorkoutComponent implements OnInit {
         this.currentWorkout = workout;
         this.isLiked = this.like();
       },
-      // error: (error) => {
-      //   console.log(`Error ${error}`);
-      // }
+      error: (error) => {
+        console.log(`Error ${error}`);
+      }
     });
   }
 
@@ -63,7 +67,6 @@ export class DetailsWorkoutComponent implements OnInit {
   }
 
   onLike(): void {
-
     if (this.user && this.currentWorkout) {
       this.workoutService.likeWorkout(this.currentWorkout._id, this.user._id).subscribe(likedWorout => {
         this.currentWorkout = likedWorout;
@@ -74,4 +77,19 @@ export class DetailsWorkoutComponent implements OnInit {
         });
     }
   }
+
+  unLike(): void {
+    if (this.user && this.currentWorkout) {
+      this.workoutService.unLikeWorkout(this.currentWorkout._id, this.user._id).subscribe(unLike => {
+        this.currentWorkout = unLike;
+        this.isLiked = false;
+      },
+        (error) => {
+          console.log('Error liking the workout', error);
+
+        })
+    }
+  }
 }
+
+
