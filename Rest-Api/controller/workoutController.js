@@ -114,5 +114,26 @@ router.post('/like/:workoutId', async (req, res) => {
 
 });
 
+router.post('/unlike/:workoutId', async (req, res) => {
+
+    try {
+        const workoutId = req.params.workoutId;
+        const userId = req.body.userId;
+
+        const workout = await workoutServices.getOne(workoutId);
+
+        if (!workout) {
+            return res.status(404).json({ error: 'Workout not found' });
+        }
+
+        workout.likes = workout.likes.filter(likedUserId => likedUserId != userId);
+        await workout.save();
+
+        res.json(workout);
+    } catch (error) {
+        console.error('Error while liking the post:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 module.exports = router;
