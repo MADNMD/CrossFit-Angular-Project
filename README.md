@@ -1,6 +1,6 @@
 # CrossFit-Angular-Project
 
-This is an app that lets you share your favorite workout or find one. If you are not a logged in user, you can see in the navigation: home , allWorkouts , login and register. After successful registration or login, the navigation changes and you can now see the workouts created by you and create new ones, edit, delete, like, search. Start training change your life!
+This is an app that lets you share your favorite workout or find one. If you are not a logged in user, you can see in the navigation: home, all workouts,login and register. After successful registration or login, the navigation changes and now you can see the workouts created by you and create new ones, edit, delete, like and search. Start training, change your life!
 
 # Technologies Used
  - Angular CLI
