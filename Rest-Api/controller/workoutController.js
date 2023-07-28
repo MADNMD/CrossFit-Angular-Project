@@ -136,4 +136,27 @@ router.post('/unlike/:workoutId', async (req, res) => {
     }
 });
 
+router.get('/search', async (req, res) => {
+
+    try {
+
+        const typeTraining = req.query.typeTraining;
+        let searchingtypeTraining = await workoutServices.searchWorkouts(typeTraining);
+
+        if (!typeTraining) {
+            return res.status(400).json({ error: 'Missing query parameter: typeTraining' });
+        }
+
+        if (searchingtypeTraining.length === 0) {
+            searchingtypeTraining = await workoutServices.getAllWorkout();
+        }
+
+
+        res.json(searchingtypeTraining)
+    } catch (error) {
+        console.log('No searching result:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 module.exports = router;
