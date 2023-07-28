@@ -1,5 +1,9 @@
 <main id="dashboard">
     <section id="catalog">
+        <form class="search-box" [formGroup]="searchForm" (ngSubmit)="search()">
+            <input type="text" formControlName="typeTraining" name="typeTraining" placeholder="Search workouts...">
+            <button type="submit" id="search-btn">Search</button>
+        </form>
         <ul *ngIf="allWorkouts" class="card-wrapper">
             <li *ngFor="let workout of allWorkouts" class="card">
                 <img src="{{workout.image}}" />
