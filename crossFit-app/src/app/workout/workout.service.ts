@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Workout } from '../interfaces/workout';
 import { User } from '../interfaces/user';
+import { Observable } from 'rxjs';
 
 const apiURL = environment.appUrl;
 
@@ -43,6 +44,11 @@ export class WorkoutService {
 
   unLikeWorkout(workoutId: string, userId: string) {
     return this.http.post<Workout>(`${apiURL}/workouts/unlike/${workoutId}`, { userId });
+  }
+
+  searchWorkout(typeTraining: string): Observable<Workout[]> {
+    const params = { typeTraining: typeTraining } //Този ред се създава параметър на JavaScript обект за съхраняване на параметрите на заявката, които ще бъдат изпратени с HTTP заявката.
+    return this.http.get<Workout[]>(`${apiURL}/workouts/search`, { params });
   }
 
 }
