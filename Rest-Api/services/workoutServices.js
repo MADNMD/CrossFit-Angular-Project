@@ -37,3 +37,10 @@ exports.myWorkouts = async (userId) => {
         throw error;
     }
 }
+
+exports.searchWorkouts = (typeTraining) => {
+
+    if (typeTraining) {
+        return (Workout.find({ typeTraining: { $regex: typeTraining, $options: 'i' } }))
+    }
+}
