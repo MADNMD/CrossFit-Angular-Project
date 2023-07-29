@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { appEmailvalidator } from 'src/app/shared/validators/app-email.validator';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +12,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class RegisterComponent {
 
   constructor(
-    private userService: UserService, 
-    private formBuilder: FormBuilder, 
+    private userService: UserService,
+    private formBuilder: FormBuilder,
     private router: Router) { }
 
   registerForm: FormGroup = this.formBuilder.group({
-    username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]),
-    email: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z]+@[A-Za-z]+\.[A-Za-z]+$')]),
+    username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+    email: new FormControl('', [Validators.required, appEmailvalidator()]),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
     repeatPassword: new FormControl('', [Validators.required]),
   })
@@ -33,9 +34,9 @@ export class RegisterComponent {
       this.router.navigateByUrl('/workouts/allWorouts');
       this.registerForm.reset();
     },
-      (error) => {
-        console.error(error);
-      }
+      // (error) => {
+      //   console.error(error);
+      // }
     )
   }
 
