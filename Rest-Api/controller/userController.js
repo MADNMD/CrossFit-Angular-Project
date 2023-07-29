@@ -12,6 +12,10 @@ router.post('/register', async (req, res) => {
         const user = await userServices.register(username, email, password);
         const token = await userServices.createToken(user);
 
+        if (process.env.NODE_ENV) {
+
+        }
+
         res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
         res.json({
             authToken: token,
@@ -37,7 +41,8 @@ router.post('/login', async (req, res) => {
         const user = await userServices.login(email, password);
         const token = await userServices.createToken(user);
 
-        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true })
+        // res.cookie(COOKIE_SESION_NAME, token, {httpOnly: true, sameSite: 'none', secure: true})
         res.json({
             authToken: token,
             username: user.username,
@@ -67,6 +72,25 @@ router.get('/user', async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+router.put('/edit/:userId', async (req, res) => {
+
+    try {
+
+        const userId = req.user._id;
+        const {username, email} = req.body;
+
+        const updateUserData = {username, email};
+       
+        const editUser = await userServices.editUser(userId, updateUserData);
+
+        res.status(200).json(editUser)
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
     }
 });
 
