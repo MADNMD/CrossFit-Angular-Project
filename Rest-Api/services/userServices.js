@@ -50,4 +50,6 @@ exports.createToken = (user) => {
 
 exports.getUser = (userId) => User.findOne({ _id: userId }, { password: 0, __v: 0 });// да ми върне user-a без паролата;
 
-exports.editUser = (userId, userData) => User.updateOne({ _id: userId }, { $set: userData }, { runValidators: true});
+exports.editUser = (userId, userData) => User.updateOne({ _id: userId }, { $set: userData }, { runValidators: true });
+
+exports.deleteUser = (userId) => User.findByIdAndDelete(userId);
