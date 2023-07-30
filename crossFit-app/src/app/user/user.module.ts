@@ -9,7 +9,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
-
 @NgModule({
   declarations: [
     LoginComponent,
@@ -25,7 +24,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
   ],
   exports: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    EditProfileComponent,
   ]
 })
 export class UserModule { }
