@@ -1,0 +1,90 @@
+#profile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+}
+
+.user-profile {
+    color: darkred;
+    width: 645px;
+    height: 440px;
+    margin: auto;
+    background-color: #000203;
+    border: 2px solid darkred;
+    border-radius: 20px;
+    margin-top: 6%;
+    /* margin-top мести кутийката  нагоре надолу */
+}
+
+.user-profile>h1 {
+    font-size: 44px;
+    text-align: center;
+    color: darkred;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    padding: 5px;
+    font-family: 'EB Garamond', serif;
+}
+
+.profile-card-info {
+    width: 290px;
+    position: relative;
+    height: auto;
+}
+
+.profile-card-info>h2 {
+    font-size: 23px;
+    text-align: center;
+    line-height: 2.6em;
+    word-wrap: break-word;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-family: 'EB Garamond', serif;
+    color: darkred;
+}
+
+.profile-card-icon>img {
+    width: 310px;
+    padding: 0px;
+    margin-top: -11em;
+    margin-left: 21.2em;
+    height: 350px;
+}
+
+.profile-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: -94px;
+    margin-right: 230px;
+}
+
+.profile-buttons a {
+    text-decoration: none;
+    margin: auto 17px;
+    font-size: 17px;
+    width: 130px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    background-image: none;
+    background-color: darkred;
+    cursor: pointer;
+}
+
+#edit-profile{
+    background-color: darkorange;
+}
+
+.profile-buttons a:hover {
+    background-color: darkred;
+    color: white;
+}
