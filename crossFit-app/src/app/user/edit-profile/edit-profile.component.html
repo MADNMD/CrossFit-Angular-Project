@@ -1,1 +1,48 @@
-<p>edit-profile works!</p>
+<main id="profile">
+    <div class="user-profile">
+        <h1>Edit Profile</h1>
+        <article class="profile-card">
+            <article class="profile-card-info">
+
+                <form [formGroup]="editUser" (ngSubmit)="onEditUser()">
+
+                    <label>Username</label>
+                    <input formControlName="username" type="text" name="username">
+                    <ng-container
+                        *ngIf="editUser.controls['username'].touched && editUser.controls['username'].invalid">
+                        <p class="error" *ngIf="editUser.controls['username'].errors?.['required']">
+                            Username is required!
+                        </p>
+                        <p class="error" *ngIf="editUser.controls['username'].errors?.['minlength']">
+                            Username should have at least 3 symblos!
+                        </p>
+                        <p class="error" *ngIf="editUser.controls['username'].errors?.['maxlength']">
+                            Username must not be more than 15 symbols!
+                        </p>
+                    </ng-container>
+
+                    <label>Email</label>
+                    <input formControlName="email" type="text" name="email">
+                    <ng-container *ngIf="editUser.controls['email'].touched && editUser.controls['email'].invalid">
+                        <p class="error" *ngIf="editUser.controls['email'].errors?.['required']">
+                            Email is required!
+                        </p>
+                        <p class="error" *ngIf="editUser.controls['email'].errors?.['patter']">
+                            Email is not valid!
+                        </p>
+                    </ng-container>
+
+                </form>
+
+            </article>
+            <article class="profile-card-icon">
+                <img src="../../../assets/profile-icon.png" alt="art-image1">
+            </article>
+        </article>
+    </div>
+    <div class="profile-buttons">
+        <a routerLink="/auth/profile" id="back-profile">Back</a>
+        <button (click)="onEditUser()" [disabled]="editUser.invalid"
+            [style]="{backgroundColor: editUser.invalid ? 'grey' : 'darkred'}" id="save-profile">Save</button>
+    </div>
+</main>
