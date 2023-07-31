@@ -1,0 +1,131 @@
+#profile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+}
+
+.user-profile {
+    color: darkred;
+    width: 600px;
+    height: 440px;
+    margin: auto;
+    background-color: #000203;
+    border: 2px solid darkred;
+    border-radius: 20px;
+    margin-top: 6%;
+    /* margin-top мести кутийката  нагоре надолу */
+}
+
+.user-profile>h1 {
+    font-size: 44px;
+    text-align: center;
+    color: darkred;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    padding: 5px;
+    font-family: 'EB Garamond', serif;
+}
+
+
+#profile form {
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: -8px;
+}
+
+#profile form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#profile form input {
+    width: 284px;
+    height: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+#profile input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.profile-card-info {
+    width: 290px;
+    position: relative;
+    height: auto;
+}
+
+.profile-card-icon>img {
+    width: 310px;
+    padding: 0px;
+    margin-top: -11em;
+    margin-left: 19.2em;
+    height: 350px;
+}
+
+.profile-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: -94px;
+    margin-right: 230px;
+}
+
+.profile-buttons a {
+    text-decoration: none;
+    margin: auto 17px;
+    font-size: 19px;
+    width: 130px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    background-image: none;
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.profile-buttons a:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#save-profile {
+    text-decoration: none;
+    margin: auto 17px;
+    font-size: 17px;
+    width: 143px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    background-color: darkgreen !important;
+    cursor: pointer;
+    border: none; 
+}
+
+#save-profile:hover {
+    background-color: darkred;
+    color: white;
+}
+
+/* #save-profile:active {
+    background-color: #700000;
+} */
