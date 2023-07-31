@@ -10,6 +10,8 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteConfirmDialogComponent } from './delete-confirm-dialog/delete-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MatButtonModule } from '@angular/material/button';
     AllWorkoutsComponent,
     DetailsWorkoutComponent,
     EditWorkoutComponent,
-    MyWorkoutsComponent,  ],
+    MyWorkoutsComponent,
+    DeleteConfirmDialogComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -25,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
   ],
   exports: [
     CreateWorkoutComponent,
@@ -32,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     DetailsWorkoutComponent,
     EditWorkoutComponent,
     MyWorkoutsComponent,
+    DeleteConfirmDialogComponent,
   ]
 })
 export class WorkoutModule { }
