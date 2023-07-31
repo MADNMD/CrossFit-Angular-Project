@@ -3,6 +3,8 @@ import { UserService } from '../user.service';
 import { User } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteConfirmDialogComponent } from '../delete-confirm-dialog/delete-confirm-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -19,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private dialog: MatDialog,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -40,27 +43,47 @@ export class ProfileComponent implements OnInit {
 
     if (this.userProfile) {
 
-      this.userService.deleteUser(this.userProfile?._id).pipe(
-        switchMap(() => this.userService.logoutUser()) //switchMap първо ще изпълни извикването deleteUser и след това ще превключи към извикването logoutUser;
-      ).subscribe(() => { // и по този начин избягвам нестнатите subscribers;
-        this.userProfile = undefined;
-        this.router.navigateByUrl('/auth/register');
-        console.log('Profile delete successfully');
-      },
-        (error) => {
-          console.log('Error deleting profile', error);
-        })
+      const dialogRef = this.dialog.open(DeleteConfirmDialogComponent, {
+        data: {
+          title: 'Delete this profile',
+          message: 'Are you sure you want to delete this profile?'
+        }
+      });
 
-      // this.userService.deleteUser(this.userProfile?._id).subscribe(() => {
-      //   this.userService.logoutUser().subscribe(() => {
-      //     this.userProfile = undefined;
-      //     this.router.navigateByUrl('/auth/register');
-      //     console.log('Profile deleted successfully');
-      //   });
+      dialogRef.afterClosed().subscribe((result) => {
+
+        if (result) {
+
+          this.userService.deleteUser(this.userProfile?._id!).pipe(
+            switchMap(() => this.userService.logoutUser()) //switchMap първо ще изпълни извикването deleteUser и след това ще превключи към извикването logoutUser;
+          ).subscribe(() => { // и по този начин избягвам нестнатите subscribers;
+            this.userProfile = undefined;
+            this.router.navigateByUrl('/auth/register');
+            console.log('Profile delete successfully');
+          },
+            (error) => {
+              console.log('Error deleting profile', error);
+            });
+        }
+      });
+    }
+  }
+}
+
+   // const shouldDelete = window.confirm('Are you sure you want to delete your profile?');
+
+      // if (shouldDelete) {
+
+      // this.userService.deleteUser(this.userProfile?._id).pipe(
+      //   switchMap(() => this.userService.logoutUser()) //switchMap първо ще изпълни извикването deleteUser и след това ще превключи към извикването logoutUser;
+      // ).subscribe(() => { // и по този начин избягвам нестнатите subscribers;
+      //   this.userProfile = undefined;
+      //   this.router.navigateByUrl('/auth/register');
+      //   console.log('Profile delete successfully');
       // },
       //   (error) => {
       //     console.log('Error deleting profile', error);
       //   })
-    }
-  }
-}
+    // }
+
+
