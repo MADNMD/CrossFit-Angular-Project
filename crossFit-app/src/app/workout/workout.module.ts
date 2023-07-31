@@ -11,7 +11,7 @@ import { MyWorkoutsComponent } from './my-workouts/my-workouts.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DeleteConfirmDialogComponent } from './delete-confirm-dialog/delete-confirm-dialog.component';
+import { DeleteConfirmationDialogComponent } from './delete-confirm-dialog/delete-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { DeleteConfirmDialogComponent } from './delete-confirm-dialog/delete-con
     DetailsWorkoutComponent,
     EditWorkoutComponent,
     MyWorkoutsComponent,
-    DeleteConfirmDialogComponent
+    DeleteConfirmationDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +37,7 @@ import { DeleteConfirmDialogComponent } from './delete-confirm-dialog/delete-con
     DetailsWorkoutComponent,
     EditWorkoutComponent,
     MyWorkoutsComponent,
-    DeleteConfirmDialogComponent,
+    DeleteConfirmationDialogComponent,
   ]
 })
 export class WorkoutModule { }
