@@ -174,7 +174,7 @@
 
                 <div class="button-container">
                     <button type="button" id="back-btn" routerLink="/workouts/details/{{currentWorkout?._id}}">Back</button>
-                    <button type="submit" [disabled]="!editForm.valid" [style]="{backgroundColor: editForm.invalid ? 'grey' : 'darkred'}" id="edit-btn">Edit</button>
+                    <button type="submit" [disabled]="!editForm.valid" [style]="{backgroundColor: editForm.invalid ? 'grey' : 'darkgreen'}" id="edit-btn">Save</button>
                 </div>
             </form>
         </div>
