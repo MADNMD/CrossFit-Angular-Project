@@ -1,6 +1,18 @@
 const Workout = require('../models/Workout');
 
-exports.getAllWorkout = () => Workout.find();
+exports.getAllWorkout = async (page, pageSize) => {
+
+    const skip = (page - 1) * pageSize;
+    const totalWorkouts = await Workout.countDocuments();
+    const totalPage = Math.ceil(totalWorkouts / pageSize);
+
+    const allWorkouts = await Workout.find().skip(skip).limit(pageSize);
+
+    return {
+        workouts: allWorkouts,
+        totalPage,
+    }
+};
 // exports.getAllWorkout = async (qs) => {
 
 //     let query = Workout.find();
