@@ -1,9 +1,17 @@
 #dashboard {
-    position: fixed;
+    /* position: fixed;
     background-image: url(../../../assets/background2.jpg);
     background-position: center;
     background-size: cover;
     margin-top: 31px;
+    margin-left: -8px;
+    margin-right: -8px;
+    display: block; */
+    /* position: relative; */
+    background-image: url(../../../assets/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: -36px;
     margin-left: -8px;
     margin-right: -8px;
     display: block;
@@ -139,4 +147,43 @@ h2 {
 
 .card {
     flex: 0 0 23%;
+}
+
+.pagination-container {
+    position: relative;
+    top: -50px;
+    /* Adjust this value as needed to move it up */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.pagination button {
+    padding: 10px 30px;
+    margin-left: 0px;
+    font-size: 16px;
+    background-color: darkred;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.pagination button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.pagination span {
+    margin: 0 22px;
+    font-size: 19px;
+    color: darkorange;
 }
