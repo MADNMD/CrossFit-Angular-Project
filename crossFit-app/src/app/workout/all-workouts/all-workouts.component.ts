@@ -13,45 +13,59 @@ export class AllWorkoutsComponent implements OnInit {
   allWorkouts: Workout[] = [];
   searchForm: FormGroup;
 
+  currentPage = 1;
+  totalPages = 1;
+
   constructor(
     private workoutService: WorkoutService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder
+  ) {
     this.searchForm = this.formBuilder.group({
       typeTraining: [''],
     })
   }
 
   ngOnInit(): void {
-    this.workoutService.getAllWorkouts().subscribe({
-      next: (workouts) => {
-        this.allWorkouts = workouts;
+    this.paginatedWokrouts();
+  }
+
+  paginatedWokrouts() {
+    this.workoutService.getAllWorkouts(this.currentPage).subscribe({
+      next: (data) => {
+        this.allWorkouts = data.workouts;
+        this.totalPages = data.totalPage;
       },
       error: (error) => {
         console.log(`Error ${error}`);
-      }
+      },
     });
   }
 
-  getAllWorkouts() {
-    this.workoutService.getAllWorkouts().subscribe({
-      next: (workouts) => {
-        this.allWorkouts = workouts;
-      },
-      error: (error) => {
-        console.log(`Error ${error}`);
-      }
-    });
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.paginatedWokrouts();
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.paginatedWokrouts();
+    }
   }
 
   search() {
     const typeTraining = this.searchForm.get('typeTraining')?.value;
 
     if (!typeTraining || typeTraining.trim() === '') {
-      this.getAllWorkouts();
+      this.paginatedWokrouts();
     } else {
       this.workoutService.searchWorkout(typeTraining).subscribe({
         next: (searchWorkouts) => {
           this.allWorkouts = searchWorkouts;
+          this.currentPage = 1;
+          this.totalPages = 1;
         },
         error: (error) => {
           console.log(`Error ${error}`);
