@@ -20,5 +20,13 @@
         <div *ngIf="allWorkouts.length === 0" id="no-post">
             <h2>No workouts added!</h2>
         </div>
+
+        <div class="pagination-container">
+            <div class="pagination">
+                <button (click)="prevPage()" [disabled]="currentPage === 1">Back</button>
+                <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+            </div>
+        </div>
     </section>
 </main>
