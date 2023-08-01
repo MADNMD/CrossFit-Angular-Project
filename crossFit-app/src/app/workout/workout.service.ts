@@ -14,8 +14,12 @@ export class WorkoutService {
 
   constructor(private http: HttpClient) { }
 
-  getAllWorkouts() {
-    return this.http.get<Workout[]>(`${apiURL}/workouts/allWorouts`);
+  // getAllWorkouts() {
+  //   return this.http.get<Workout[]>(`${apiURL}/workouts/allWorouts`);
+  // }
+
+  getAllWorkouts(page: number): Observable<any> {
+    return this.http.get<Workout[]>(`${apiURL}/workouts/allWorouts`, { params: { page: page.toString() } });
   }
 
   createWorkout(difficultyLevel: string, typeTraining: string, image: string, trainingDuration: string, exercises: string, likes: string[], owner: User) {
