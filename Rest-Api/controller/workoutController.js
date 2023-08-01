@@ -6,9 +6,13 @@ const { getErrorMessage } = require('../utils/errorHellper');
 router.get('/allWorouts', async (req, res) => {
 
     try {
-        const allWorouts = await workoutServices.getAllWorkout();
 
-        res.json(allWorouts);
+        const page = parseInt(req.query.page) || 1;
+        const pageSize = 3;
+
+        const { workouts, totalPage } = await workoutServices.getAllWorkout(page, pageSize);
+
+        res.json({ workouts, totalPage });
     } catch (error) {
         res.status(400).json({
             message: getErrorMessage(error)
