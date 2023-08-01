@@ -104,8 +104,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    /* This ensures the container covers the full viewport height */
+    min-height: 86vh;
 }
 
 
