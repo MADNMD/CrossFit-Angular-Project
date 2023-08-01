@@ -120,6 +120,10 @@ table td p span {
     cursor: pointer;
 }
 
+#edit-btn{
+    background-color: darkorange !important;
+}
+
 #action-buttons a:hover {
     background-color: darkred;
     color: white;
