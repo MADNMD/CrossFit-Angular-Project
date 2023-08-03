@@ -38,19 +38,25 @@ exports.editWorkout = (workoutId, workoutData) => Workout.updateOne({ _id: worko
 
 exports.delete = (workoutId) => Workout.findByIdAndDelete(workoutId);
 
-exports.myWorkouts = async (userId) => {
+exports.myWorkouts = async (userId, page, pageSize) => {
 
     try {
-        const query = Workout.find({ owner: userId });
-        const result = await query;
+        const skip = (page - 1) * pageSize;
+        const totalMyWorkouts = await Workout.countDocuments({ owner: userId });
+        const totalPage = Math.ceil(totalMyWorkouts / pageSize);
 
-        return result;
+        const myWorkouts = await Workout.find({ owner: userId }).skip(skip).limit(pageSize);
+
+        return {
+            workouts: myWorkouts,
+            totalPage
+        };
     } catch (error) {
         throw error;
     }
 }
 
-exports.searchWorkouts = (typeTraining) => {
+exports.searchWorkouts = async (typeTraining) => {
 
     if (typeTraining) {
         return (Workout.find({ typeTraining: { $regex: typeTraining, $options: 'i' } }))
