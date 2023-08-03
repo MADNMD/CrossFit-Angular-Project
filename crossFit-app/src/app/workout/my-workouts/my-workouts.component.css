@@ -28,7 +28,7 @@ h2 {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 270px;
+    padding-top: 212px;
 }
 
 .card-wrapper h2 {
@@ -95,4 +95,43 @@ h2 {
     justify-content: center;
     align-items: center;
     min-height: 85vh;
+}
+
+.pagination-container {
+    position: relative;
+    top: -50px;
+    /* Adjust this value as needed to move it up */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.pagination button {
+    padding: 10px 30px;
+    margin-left: 0px;
+    font-size: 16px;
+    background-color: darkred;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.pagination button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.pagination span {
+    margin: 0 22px;
+    font-size: 19px;
+    color: darkorange;
 }
