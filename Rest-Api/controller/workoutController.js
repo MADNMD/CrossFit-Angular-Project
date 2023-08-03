@@ -9,9 +9,9 @@ router.get('/allWorouts', async (req, res) => {
 
         const page = parseInt(req.query.page) || 1;
         const pageSize = 3;
-
+        
         const { workouts, totalPage } = await workoutServices.getAllWorkout(page, pageSize);
-
+        
         res.json({ workouts, totalPage });
     } catch (error) {
         res.status(400).json({
@@ -80,10 +80,13 @@ router.delete('/delete/:workoutId', async (req, res) => {
 router.get('/myWorkouts/:userId', async (req, res) => {
 
     try {
+        const page = parseInt(req.query.page) || 1;
+        const pageSize = 3;
+       
         const userId = req.params.userId;
-        const myWorkouts = await workoutServices.myWorkouts(userId);
-
-        res.json(myWorkouts);
+        const { workouts, totalPage } = await workoutServices.myWorkouts(userId, page, pageSize);
+        
+        res.json({ workouts, totalPage });
     } catch (error) {
         res.status(400).json({
             message: getErrorMessage(error)
