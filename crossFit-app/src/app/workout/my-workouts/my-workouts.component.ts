@@ -12,30 +12,49 @@ import { UserService } from 'src/app/user/user.service';
 export class MyWorkoutsComponent implements OnInit {
 
   myWorkouts: Workout[] = [];
-  userId: string = '';;
+  userId: string = '';
+
+  currentPage = 1;
+  totalPages = 1;
 
   constructor(
     private workoutService: WorkoutService,
     private userService: UserService) { }
 
+
   ngOnInit(): void {
 
     if (this.userService.user) {
       this.userId = this.userService.user._id;
+      this.paginationMyWorkouts();
     }
-    // console.log(this.userService.user);
-    
-    this.workoutService.myWorkouts(this.userId).subscribe({
-      next: (workouts) => {
-        // console.log(workouts);
-        this.myWorkouts = workouts;
+  }
+
+  paginationMyWorkouts() {
+
+    this.workoutService.myWorkouts(this.userId, this.currentPage).subscribe({
+      next: (data) => {
+          this.myWorkouts = data.workouts;
+          this.totalPages = data.totalPage; 
       },
-      // error: (error) => {
-      //   console.log(`Error ${error}`);
-
-      // }
+      error: (error) => {
+        console.log(error);
+      }
     })
+  }
 
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.paginationMyWorkouts();
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.paginationMyWorkouts();
+    }
   }
 
 }
