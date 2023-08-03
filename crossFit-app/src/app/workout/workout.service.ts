@@ -38,8 +38,8 @@ export class WorkoutService {
     return this.http.delete<Workout>(`${apiURL}/workouts/delete/${workoutId}`);
   }
 
-  myWorkouts(userId: string) {
-    return this.http.get<Workout[]>(`${apiURL}/workouts/myWorkouts/${userId}`);
+  myWorkouts(userId: string, page: number): Observable<any> {
+    return this.http.get<Workout[]>(`${apiURL}/workouts/myWorkouts/${userId}`, { params: { page: page.toString() } });
   }
 
   likeWorkout(workoutId: string, userId: string) {
