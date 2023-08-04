@@ -1,3 +1,5 @@
 export const environment = {
-    appUrl: 'http://localhost:3000'
+    production: true,
+    appUrl: 'https://crossfir-app-rest-api.onrender.com/api'
+    // appUrl: 'http://localhost:3000'
 };
