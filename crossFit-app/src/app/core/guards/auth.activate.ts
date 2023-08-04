@@ -15,7 +15,7 @@ export class AuthActivate implements CanActivate {
         if (this.userService.user) {
             return true;
         } else {
-            const loginUrlTree: UrlTree = this.router.parseUrl('/login');
+            const loginUrlTree: UrlTree = this.router.parseUrl('/auth/login');
             return loginUrlTree
         }
     }
