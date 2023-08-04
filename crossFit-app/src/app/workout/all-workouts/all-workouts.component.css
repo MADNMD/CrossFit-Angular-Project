@@ -20,12 +20,12 @@
 #catalog {
     margin-top: 10px;
     padding-top: 100px;
-    margin-bottom: 200px;
 }
 
 h2 {
     font-size: 40px;
     color: darkred;
+    margin-bottom: 200px;
 }
 
 .card img {
