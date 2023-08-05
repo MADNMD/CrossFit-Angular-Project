@@ -17,7 +17,8 @@ router.post('/register', async (req, res) => {
 
         }
 
-        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        // res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        res.cookie(COOKIE_SESION_NAME, token, {httpOnly: true, sameSite: 'none', secure: true});
         res.json({
             authToken: token,
             username: user.username,
@@ -42,8 +43,8 @@ router.post('/login', async (req, res) => {
         const user = await userServices.login(email, password);
         const token = await userServices.createToken(user);
 
-        res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true })
-        // res.cookie(COOKIE_SESION_NAME, token, {httpOnly: true, sameSite: 'none', secure: true})
+        // res.cookie(COOKIE_SESION_NAME, token, { httpOnly: true });
+        res.cookie(COOKIE_SESION_NAME, token, {httpOnly: true, sameSite: 'none', secure: true});
         res.json({
             authToken: token,
             username: user.username,
