@@ -2,3 +2,14 @@
 
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* Default styles for larger screens */
+.some-element {
+    font-size: 16px;
+  }
+  
+  /* Apply different styles for phones and tablets */
+  @media (max-width: 768px) {
+    .some-element {
+      font-size: 14px;
+    }
+  }
