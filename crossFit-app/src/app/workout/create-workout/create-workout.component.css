@@ -14,8 +14,8 @@
     color: darkred;
     width: 360px;
     height: auto;
-    margin: auto;
-    margin-top: -18px;
+    margin: -70px auto auto;
+    /* margin-top: -18px; */
     background-color: #000203;
     border: 2px solid darkred;
     border-radius: 20px;
