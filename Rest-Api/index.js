@@ -12,7 +12,8 @@ const { getErrorMessage } = require('../Rest-Api/utils/errorHellper')
 const app = express();
 
 expresConfig(app);
-app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
+// app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
+app.use(cors({ origin: 'https://main--corssfit.netlify.app', credentials: true }));
 app.use(coockiParser());
 app.use(auth);
 app.use(router);
