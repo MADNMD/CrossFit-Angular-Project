@@ -105,7 +105,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 101vh;
+    /* min-height: 101vh; */
+    min-height: 94vh;
 }
 
 
