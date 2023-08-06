@@ -46,7 +46,8 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 23%;
-    height: 500px;
+    /* height: 500px; */
+    height: 430px;
     /* transform: translateY(-122px); */
     transform: translateY(-45px);
     margin: 25px auto;
