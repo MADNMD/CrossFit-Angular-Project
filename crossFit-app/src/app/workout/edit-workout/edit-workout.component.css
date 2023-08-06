@@ -137,13 +137,15 @@
 
   #edit {
     width: 100%;
-    height: 78vh;
+    /* height: 78vh; */
+    height: 80vh;
     margin-left: -8px;
     padding-left: 16px;
     background-image: url(../../../assets/background2.jpg);
     background-position: center;
     background-size: cover;
-    padding-top: 167px;
+    /* padding-top: 167px; */
+    padding-top: 114px;
 }
 
 #edit-container {
