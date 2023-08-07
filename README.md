@@ -4,6 +4,13 @@ This is an app that lets you share your favorite workout or find one. If you are
 
 **[https://corssfit.netlify.app](https://corssfit.netlify.app)**
 
+## Test User
+
+To explore the app's features without registering, you can use the following test user credentials:
+
+- **Username:** test123@abv.bg
+- **Password:** 12345
+
 # Technologies Used
  - Angular CLI
  - TypeScript
