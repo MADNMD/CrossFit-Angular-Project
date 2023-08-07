@@ -1,6 +1,8 @@
 # CrossFit-Angular-Project
 
-This is an app that lets you share your favorite workout or find one. If you are not a logged in user, you can see in the navigation: home, all workouts,login and register. After successful registration or login, the navigation changes and now you can see the workouts created by you and create new ones, edit, delete, like and search. Start training, change your life!
+This is an app that lets you share your favorite workout or find one. If you are not a logged in user, you can see in the navigation: start, all workouts, login and registration. After successful registration or login, the navigation changes and you can now see your profile and edit it, the workouts you created and create new ones, edit, delete, like and search. Start training, change your life!
+
+**[https://corssfit.netlify.app](https://corssfit.netlify.app)**
 
 # Technologies Used
  - Angular CLI
@@ -10,26 +12,40 @@ This is an app that lets you share your favorite workout or find one. If you are
  - MongoDB with Mongoose
 
 # Installation
- - Clone the repository: https://github.com/MADNMD/CrossFit-Angular-Project.git
-  # Rest-Api
-   - Navigate to the project folder: `cd Rest-api`
-   - Install dependencies: `npm i`
- # crossFit-app
-  - Navigate to the project folder: `cd crossFit-app`
-  - Install dependencies: `npm i`
+1. Clone the repository: https://github.com/MADNMD/CrossFit-Angular-Project.git
+
+ ### Setting Up the Cloud Database
+
+2. Use MongoDB Atlas, a cloud-based database service, to store and manage data. Follow these steps to set up your cloud database:
+
+   - Sign up for an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Create a new cluster and configure your database settings
+   - Obtain your MongoDB connection string
+
+### Deploying the Server
+
+3. Deploy server using [render.com](https://render.com), a platform for hosting applications. To deploy the server:
+
+   - Sign up for an account on [render.com](https://render.com)
+   - Configure your server settings and deploy your REST API
+
+### Deploying the Angular App
+
+4. We use [Netlify](https://www.netlify.com) to host the client-side of our app. To deploy the Angular app:
+
+   - Sign up for an account on [Netlify](https://www.netlify.com)
+   - Configure your app settings and deploy your Angular app
 
 # Usage
- - Run the server: `npm start`
- - Server is listening at port 3000: `http://localhost:3000`
- - ---------------------------
- - Run the Angular app: `npx ng s`
- - Access the app in your browser at: `http://localhost:4200`
+Once you've created your cluster, set up the server, and deployed the Angular app, you can access and interact with the app using the provided URLs.
 
 # API Endpoints
  - `POST /users/login`: Logged user
  - `POST /users/register`: Register user
  - `GET /users/logout`: Logout user
  - `GET /users/user`: The currently logged user
+ - `PUT /users/edit/:userId`: Update an existing user by ID
+ - `DELETE /users/delete/:userId`: Delete a user by ID
  - `GET /workouts/allWorkouts`:  Get a list of all workouts
  - `POST /workouts/create`: Create a new workout
  - `GET /workouts/details/:workoutId`: Ddetails a workout by ID
@@ -38,6 +54,7 @@ This is an app that lets you share your favorite workout or find one. If you are
  - `GET /workouts/myWorkouts/:userId`: Get all workouts created by a specific user
  - `POST /workouts/like/:workoutId`: Like a workout by ID
  - `POST /workouts/unlike/:workoutId`: Unlike a workout by ID
+ - `GET /workouts/search`: Search for a workout by type
 
    # License
    - MIT License
