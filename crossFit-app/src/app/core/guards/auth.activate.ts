@@ -12,11 +12,9 @@ export class AuthActivate implements CanActivate {
     // Този клас AuthActivate отиваме и го слагаме в рутера на User така canActivate: [AuthActivate] и в theme модула на addTheme също го добавяме;
     canActivate(): boolean | UrlTree {
 
-        if (this.userService.isLogged) {
-            console.log(!this.userService.isLogged, 'true');
+        if (this.userService.user) {
             return true;
         } else {
-            console.log(!this.userService.isLogged, 'false');
             const loginUrlTree: UrlTree = this.router.parseUrl('/auth/login');
             return loginUrlTree
         }
