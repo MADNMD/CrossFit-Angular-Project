@@ -14,7 +14,7 @@ export class AuthPrevent implements CanActivate {
         private router: Router) { }
 
     canActivate(): boolean | UrlTree {
-        if (!this.userService.user) {
+        if (!this.userService.isLogged) {
             return true;
         } else {
             const homeUrlTree: UrlTree = this.router.parseUrl('/home');
