@@ -118,8 +118,8 @@ router.delete('/delete/:userId', async (req, res) => {
 router.get('/logout', (req, res) => {
 
     res.clearCookie(COOKIE_SESION_NAME);
-    res.json({});
-    res.status(200);
+    // res.json({});
+    res.status(200).json({ message: "Logged out successfully" });
 });
 
 
