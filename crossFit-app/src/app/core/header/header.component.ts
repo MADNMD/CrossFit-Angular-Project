@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
     logoutUser(): void {
         this.userService.logoutUser().subscribe({
             next: () => {
-                document.cookie = `authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                // document.cookie = `authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
                 console.log(this.userService.user)
                 this.router.navigateByUrl('/auth/login');
             },
