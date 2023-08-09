@@ -117,7 +117,7 @@ router.delete('/delete/:userId', async (req, res) => {
 
 router.get('/logout', (req, res) => {
 
-    res.clearCookie(COOKIE_SESION_NAME, { maxAge: 0 });
+    res.clearCookie(COOKIE_SESION_NAME);
     res.json({});
     res.status(200);
 });
