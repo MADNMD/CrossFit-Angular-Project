@@ -11,8 +11,8 @@ const apiURL = environment.appUrl;
 })
 export class UserService implements OnDestroy {
 
-  private user$$ = new BehaviorSubject<User | null>(null); // вид за наблюдаване който позволява на абонатите получат последната излъчена стойност, както и следващите стойности;
-  user$ = this.user$$.asObservable(); //  само за четене и гарантира че външни компоненти могат да се абонират за промени но не могат да правят промени;
+  private user$$ = new BehaviorSubject<User | null>(null);
+  user$ = this.user$$.asObservable();
 
   user: User | null = null;
 
@@ -27,7 +27,7 @@ export class UserService implements OnDestroy {
   }
 
   registerUser(username: string, email: string, password: string) {
-    return this.http.post<User>(`${apiURL}/users/register`, { username, email, password }).pipe( // използва се за наблюдаемото върното от HTTP заявката;
+    return this.http.post<User>(`${apiURL}/users/register`, { username, email, password }).pipe(
       tap((user: User) => { //С включването на tap в pipe-а, той гарантира, че редът isAuthenticated.next(true) се изпълнява само след успешна регистрация.
         this.user$$.next(user);
       }),
