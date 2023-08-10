@@ -1,7 +1,7 @@
 <main id="dashboard">
     <section id="catalog">
         <form *ngIf="allWorkouts.length !== 0" class="search-box" [formGroup]="searchForm" (ngSubmit)="search()">
-            <input type="text" formControlName="typeTraining" name="typeTraining" placeholder="Search workouts...">
+            <input type="text" formControlName="typeTraining" name="typeTraining" placeholder="Search type workouts...">
             <button type="submit" id="search-btn">Search</button>
         </form>
         <ul *ngIf="allWorkouts" class="card-wrapper">
