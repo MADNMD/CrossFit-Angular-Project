@@ -14,6 +14,8 @@ To explore the app's features without registering, you can use the following tes
 # Technologies Used
  - Angular CLI
  - TypeScript
+ - HTML/CSS
+ - JavaScript
  - Node.js
  - Express.js
  - MongoDB with Mongoose
