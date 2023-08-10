@@ -16,7 +16,7 @@ export class LoginComponent {
     private router: Router,) { }
 
   loginForm: FormGroup = this.formBuilder.group({
-    email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')]),
+    email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9.,!-_]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')]),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 

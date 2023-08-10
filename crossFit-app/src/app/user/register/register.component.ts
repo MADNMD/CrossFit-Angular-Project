@@ -19,7 +19,7 @@ export class RegisterComponent {
   registerForm: FormGroup = this.formBuilder.group({
     username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     // email: new FormControl('', [Validators.required, appEmailvalidator()]),
-    email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')]),
+    email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9.,!-_]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')]),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
     repeatPassword: new FormControl('', [Validators.required]),
   })
