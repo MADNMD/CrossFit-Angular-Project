@@ -50,4 +50,8 @@ export class HeaderComponent implements OnInit {
             }
         })
     }
+
+    ngOnDestroy(): void {
+        return this.subscription.unsubscribe();
+    }
 }
