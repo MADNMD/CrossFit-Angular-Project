@@ -13,7 +13,11 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
     get isLoggedIn(): boolean {
-        return this.userService.isLogged
+        return this.userService.isLogged;
+    }
+
+    get user() {
+        return this.userService.user;
     }
 
     message: string | null = null;
