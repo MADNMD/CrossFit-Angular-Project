@@ -9,14 +9,14 @@ import { User } from '../interfaces/user';
 })
 export class AuthenticateComponent implements OnInit {
 
-  isAuthenticated = true;
+  isAuthenticated = false;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
 
     this.userService.getUser().subscribe({
-      next: () => { this.isAuthenticated = false },
+      next: () => { this.isAuthenticated = true },
       error: () => { this.isAuthenticated = false },
     })
   }
