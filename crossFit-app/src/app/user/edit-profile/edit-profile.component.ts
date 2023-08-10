@@ -21,8 +21,8 @@ export class EditProfileComponent implements OnInit {
 
   editUser: FormGroup = this.formBuilder.group({
     username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-    // email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]],
-    email: ['', [Validators.required, appEmailvalidator()]],
+    email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9.,!-_]+@[a-zA-Z]+\.[a-zA-Z]{2,}$')]],
+    // email: ['', [Validators.required, appEmailvalidator()]],
   })
 
   ngOnInit(): void {
