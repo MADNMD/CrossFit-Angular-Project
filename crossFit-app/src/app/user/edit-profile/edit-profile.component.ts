@@ -18,7 +18,6 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private errorService: ErrorMessageService,
     private router: Router) { }
 
   editUser: FormGroup = this.formBuilder.group({
@@ -54,10 +53,6 @@ export class EditProfileComponent implements OnInit {
       },
       (error) => {
         console.error('Error editing user:', error);
-        this.errorService.notifyForMessage({
-          text: 'This username already exists!',
-          type: MessageType.Error
-        })
       })
     }
 
