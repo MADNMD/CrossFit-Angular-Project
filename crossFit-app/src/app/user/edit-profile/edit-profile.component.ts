@@ -4,6 +4,7 @@ import { User } from 'src/app/interfaces/user';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { appEmailvalidator } from 'src/app/shared/validators/app-email.validator';
+import { ErrorMessageService, MessageType } from 'src/app/core/error-message.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -17,6 +18,7 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
+    private errorService: ErrorMessageService,
     private router: Router) { }
 
   editUser: FormGroup = this.formBuilder.group({
@@ -52,6 +54,10 @@ export class EditProfileComponent implements OnInit {
       },
       (error) => {
         console.error('Error editing user:', error);
+        this.errorService.notifyForMessage({
+          text: 'This username already exists!',
+          type: MessageType.Error
+        })
       })
     }
 
