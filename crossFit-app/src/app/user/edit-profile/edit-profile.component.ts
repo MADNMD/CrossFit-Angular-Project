@@ -49,6 +49,9 @@ export class EditProfileComponent implements OnInit {
     if (this.user) {
       this.userService.editUser(this.user?._id, username, email).subscribe(() => {
         this.router.navigateByUrl('/auth/profile')
+      },
+      (error) => {
+        console.error('Error editing user:', error);
       })
     }
 
