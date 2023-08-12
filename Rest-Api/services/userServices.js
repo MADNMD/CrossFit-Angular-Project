@@ -5,7 +5,15 @@ const jwt = require('jsonwebtoken');
 
 const { SECRET } = require('../config/env');
 
-exports.register = (username, email, password) => {
+exports.register = async (username, email, password) => {
+
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] }); // проверяваме дали има съществуваш потребител с този username или парола;
+
+    if (existingUser) {
+        throw {
+            message: 'Username or email is already taken!'
+        }
+    }
 
     const userData = { username, email, password };
 
@@ -50,6 +58,25 @@ exports.createToken = (user) => {
 
 exports.getUser = (userId) => User.findOne({ _id: userId }, { password: 0, __v: 0 });// да ми върне user-a без паролата;
 
-exports.editUser = (userId, userData) => User.updateOne({ _id: userId }, { $set: userData }, { runValidators: true });
+exports.editUser = async (userId, userData) => {
+
+    const existingUserWithUsername = await User.findOne({ username: userData.username });
+
+    if (existingUserWithUsername && existingUserWithUsername._id.toString() !== userId) {
+        throw {
+            message: 'A user with this username already exists!'
+        }
+    }
+
+    const existingUserWithEmail = await User.findOne({ email: userData.email });
+
+    if (existingUserWithEmail && existingUserWithEmail._id.toString() !== userId) {
+        throw {
+            message: 'A user with this email already exists!'
+        }
+    }
+
+    return await User.updateOne({ _id: userId }, { $set: userData }, { runValidators: true });
+}
 
 exports.deleteUser = (userId) => User.findByIdAndDelete(userId);
