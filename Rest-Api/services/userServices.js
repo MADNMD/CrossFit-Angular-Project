@@ -9,15 +9,9 @@ exports.register = async (username, email, password) => {
 
     const existingUser = await User.findOne({ $or: [{ username }, { email }] }); // проверяваме дали има съществуваш потребител с този username или парола;
 
-    if (existingUser.username === username) {
+    if (existingUser) {
         throw {
-            message: 'Username is already taken!'
-        }
-    }
-
-    if (existingUser.email === email) {
-        throw {
-            message: 'Email is already taken!'
+            message: 'Username or email is already taken!'
         }
     }
 
