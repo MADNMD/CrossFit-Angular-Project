@@ -51,7 +51,12 @@ export class UserService implements OnDestroy {
   }
 
   editUser(userId: string, username: string, email: string) {
-    return this.http.put<User>(`${apiURL}/users/edit/${userId}`, { username, email });
+    return this.http.put<User>(`${apiURL}/users/edit/${userId}`, { username, email }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.log(error);
+        return throwError(error.message);
+      })
+    )
   }
 
   deleteUser(userId: string) {
