@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from '../user.service';
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
-export class EditProfileComponent implements OnInit {
+export class EditProfileComponent implements OnInit, OnDestroy {
 
   user: User | undefined;
 
@@ -77,4 +77,10 @@ export class EditProfileComponent implements OnInit {
 
   }
 
+  ngOnDestroy(): void {
+
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
+  }
 }
