@@ -13,7 +13,7 @@
 .register-box {
     color: darkred;
     width: 360px;
-    height: 500px;
+    height: auto;
     margin: auto;
     background-color: #000203;
     border: 2px solid darkred;
