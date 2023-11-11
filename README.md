@@ -67,3 +67,8 @@ Once you've created your cluster, set up the server, and deployed the Angular ap
 
    # License
    - MIT License
+
+   # Screenshots
+
+   ## Home Page
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/Screenshot%20(39).png)
