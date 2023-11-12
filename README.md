@@ -70,5 +70,29 @@ Once you've created your cluster, set up the server, and deployed the Angular ap
 
    # Screenshots
 
-   ## Home Page
-   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/Screenshot%20(39).png)
+   ## Home page
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/home-page.png)
+
+   ## Login page
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/login.png)
+
+   ## Register page
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/login.png)
+
+   ## Add workout
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/add-workout.png)
+
+   ## All workouts
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/all-workouts.png)
+
+   ## Details wokrout
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/details-workout.png)
+
+   ## Profile page
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/profile.png)
+
+   ## Navigation - not logged in
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/logout-user.png)
+
+   ## Navigation - logged in user
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/login-user.png)
