@@ -77,7 +77,7 @@ Once you've created your cluster, set up the server, and deployed the Angular ap
    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/login.png)
 
    ## Register page
-    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/login.png)
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/register.png)
 
    ## Add workout
     ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/add-workout.png)
@@ -90,6 +90,15 @@ Once you've created your cluster, set up the server, and deployed the Angular ap
 
    ## Profile page
     ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/profile.png)
+
+   ## Delete modal
+    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/delete.png)
+
+   ## Like
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/LIke.png)
+
+   ## Unlike
+   ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/unlike.png)
 
    ## Navigation - not logged in
    ![My Image](https://github.com/MADNMD/CrossFit-Angular-Project/blob/main/images/logout-user.png)
